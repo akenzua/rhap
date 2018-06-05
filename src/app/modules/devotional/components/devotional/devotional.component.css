@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:700|Open+Sans');
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Bitter', serif; */
+h1,h2,h3,h4,h5{
+  font-family: 'Bitter', serif;
+}
+.devotional{
+  background: white;
+  margin: 0;
+  width: 100%;
+  padding-top: 15px;
+  position: relative;
+ 
+}
+
+.subject{
+  text-align: center;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.num{
+  font-family: 'Bitter', serif;
+  color: #7CC2D9;
+  font-size: 20px;
+}
+.num{
+  font-family: 'Bitter', serif;
+  color: #7CC2D9;
+  font-size: 15px;
+}
+.verse, .passages{
+  font-style: italic;
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  border-top: 1px solid #818181;
+  border-bottom: 1px solid #818181;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.passages{
+  border: none;
+}
+
+.further{
+  font-style: italic;
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+p{
+  font-family: 'Open Sans', sans-serif;
+}
+.form1{
+  width: 30%;
+  margin-right: 5%;
+}
+.sub{
+  width: 5%;
+  
+  
+}
+
+.prime{
+  color:#D79500;
+}
+
+.image{
+  
+  width: 100%;
+}
+.img{
+  height: auto;
+  display: block;
+}
+/* .dev-footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 5px 0;
+ background: #fff;
+ color:#1A3A5A;
+ border-top:1px solid #DFE9F4;
+ font-size:20px;
+} */
+.frame{
+  padding-bottom:70px;
+  
+}
+.highlighted{
+  font-style: italic;
+}
+.invalid-content{
+  color:#667e8c;
+  font-style: italic;
+  font-size: 25px;
+  margin-top: 40%;
+  text-align: center;
+}
+.material-icons{
+  color: #002940;
+}
+.share{
+  background-color: #e0e0e0;
+  position: fixed;
+  right: 30px;
+  opacity: 0.8;
+  bottom: 50px;
+}
+.buttons{
+  position: fixed;
+  right: 20px;
+  opacity: 0.8;
+  bottom: 100px;
+  width:50px;
+}
+.buttons button{
+  margin-bottom: 20px;
+}
+.comment{
+  font-size:18px;
+}
+.comment-section{
+  margin-top: 40px;
+}
+
+@media (min-width: 576px) { 
+  .sub{
+    width: 5%;
+    margin-left: 15%;
+    
+  }
+  .img{
+    height: auto;
+    display: block;
+  }
+}

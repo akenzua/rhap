@@ -1,0 +1,97 @@
+<div class="container devotional">
+    
+    <div class="col-lg-6 offset-lg-3" >
+      <!-- <mat-form-field class="form2">
+          <input matInput placeholder="Book" value="{{selectedBook}}"  (click)="booksAnchor()">
+      </mat-form-field>
+      <mat-form-field class="form1">
+          <input matInput placeholder="Chapter" value="{{selectedChapter}}"  (click)="chaptersAnchor()">
+      </mat-form-field>
+  
+      <mat-form-field class="form1">
+          <input matInput placeholder="Version" value="{{selectedVersionName}}"  (click)="VersionsAnchor()">
+      </mat-form-field> -->
+  <div *ngIf="selectedChapter"  class="selectBox">
+        <span *ngIf="selectedBook" class="form2"placeholder="Chapter" (click)="booksAnchor()">{{selectedBook}}  </span>
+        <span *ngIf="selectedChapter" class="form3" (click)="chaptersAnchor()">{{selectedChapter}}</span>
+        <span *ngIf="selectedVersionName" class="form1 pull-right" (click)="VersionsAnchor()" >{{selectedVersionName}}</span>
+    </div>
+   <!-- new beginning -->
+   <br>
+   <!-- <spinner backgroundColor="#D79500" spinner="sk-wave"></spinner> -->
+   <ng-template [ngIf]="show === 'togBooks'" >
+   
+      <!-- <mat-option *ngFor="let book of bookNames" [value]=book.ord (click)="onSelectBook(book.ord,book.name)">
+        {{book.name }}
+      </mat-option> -->
+      <div id="book-list">
+      <mat-list dense *ngFor="let book of bookNames"  (click)="onSelectBook(book.ord, book.name)" [class.selected]="book.name === selectedBook" >
+          <mat-list-item>{{book.name }} </mat-list-item>
+          
+      </mat-list>
+      </div>
+    
+   </ng-template>
+
+   <ng-template [ngIf]="show === 'togChapters'">   
+       <p *ngIf="chosenBook" class="chosen">{{chosenBook}}</p>
+      <div *ngIf="chapters" id="book-list">
+       
+        <span class="button-row "  *ngFor="let chapter of chapters?.chapters">
+        <button mat-fab  (click)="onSelectChapter(chapter.id)"  [class.selected]="chapter.id  === url"> {{chapter.chapter }} </button>
+    </span>
+</div>
+
+    <div *ngIf="!chapters">
+        Please Select a Book
+    </div>
+
+   </ng-template>
+
+     <ng-template [ngIf]="show === 'togVersions'">
+        <!-- <mat-option *ngFor="let version of versions" [value]="version.id" (click)=onSelectVersion(version.id)>
+            <span>{{version.abbreviation}}</span> {{version.name}}  
+            <span class="excuse">{{version.id}}
+          
+            </span>
+          </mat-option> -->
+
+
+          <div id="book-list">
+            <mat-list dense *ngFor="let version of versions"  (click)="onSelectVersion(version.id)" [class.selected]="version.id === selectedVersion">
+                <mat-list-item>{{version.abbreviation}} {{version.name}}</mat-list-item>
+                
+            </mat-list>
+            </div>
+  
+  
+     </ng-template>
+   
+   <!-- <ng-template [ngIf]="show === 'togContent'">
+      <div *ngFor="let verses of content" class="content">
+          <span [innerHTML]="verses.text | keepHtml"> </span>
+          
+      
+        </div>
+        <div class="copy">
+        <span id="copyright" [innerHTML]="copyright | keepHtml"></span>
+     </div>
+     </ng-template> -->
+
+     <ng-template [ngIf]="show === 'togContent'">
+        <!-- <spinner backgroundColor="#D79500" spinner="sk-wave"></spinner> -->
+        <span [innerHTML]="content?.text | keepHtml"></span>
+        <button *ngIf="previous !== ''" mat-mini-fab class="chevron left"><a routerLink="/bible/{{previous}}"><i class="material-icons">chevron_left</i></a></button>
+        <button *ngIf="next !== ''" mat-mini-fab class="chevron right"><a routerLink="/bible/{{next}}"><i class="material-icons">chevron_right</i></a></button>
+ 
+         <div class="copy">
+            <span id="copyright" [innerHTML]="content?.copyright | keepHtml"></span>
+         </div>
+    </ng-template> 
+
+ 
+<!-- new end -->
+</div>
+
+
+</div>

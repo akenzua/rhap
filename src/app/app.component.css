@@ -1,0 +1,37 @@
+@font-face { font-family: 'Melville Regular'; src: url("http://daysman.co/assets/fonts/Melville Regular.ttf") format('truetype'); }
+
+.example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user p{
+text-align: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+  .mat-drawer{
+    background: #002940;
+    opacity:0.7;
+  }
+
+  mat-sidenav{
+    
+    background: #fff;
+    
+      width: 200px;
+    margin:0;
+    border:none;
+    padding:0;
+  }
+  

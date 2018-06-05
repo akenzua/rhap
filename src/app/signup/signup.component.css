@@ -1,0 +1,97 @@
+
+.auth {
+    
+    background: #fff;
+    height:100%;
+    margin: 0;
+    margin-right: 0;
+    width: 100vw;
+   
+  }
+  .auth-form{
+    height:100%;
+  }
+  
+
+  .btn-primary.disabled, .btn-primary:disabled{
+    background-color: #002940;
+    opacity: .85;
+    border-color: #002940;
+    color: #7CC2D9;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .form-control::placeholder {
+    color: #dbdbdb;
+    opacity: 1; /* Firefox */
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #dbdbdb;
+   font-family: 'Open Sans', sans-serif;
+  }
+  
+  .form-control::-ms-input-placeholder { /* Microsoft Edge */
+   color: #dbdbdb;
+   font-family: 'Open Sans', sans-serif;
+  }
+  
+  .password{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .pull-right{
+    float:right;
+  }
+  .form-check {
+    
+    display: inline;
+    
+  }
+  .no-account{
+    background: #ededed;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: #939393;
+  }
+  .create-account{
+    color:#7CC2D9;
+  }
+  .user-signin{
+   
+  }
+  
+  .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent{
+    background: #fff;
+    border:1px solid #7CC2D9;
+    color:  #002940;
+   
+   
+  }
+  .sign-in-head{
+       margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .sign-in-head p{
+    
+    color:  #002940;
+    font-size: 40px;
+  }
+  .custom-file{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  

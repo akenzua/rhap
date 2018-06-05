@@ -1,0 +1,248 @@
+<div class="container devotional">
+
+<div class="col-lg-6 offset-lg-3 frame" >
+
+
+
+  <form form (ngSubmit)="onRead()"  class="form-inline" [formGroup]="devotionalForm"> 
+      
+     
+
+        
+            <mat-form-field class="form1">
+              <input matInput placeholder="Language" aria-label="Language" [matAutocomplete]="language" [formControl]="languageCtrl">
+              <mat-autocomplete #language="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let language of filteredLanguages | async" [value]="language">
+                  
+                  <span>{{ language.name }}</span>
+                 
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+    
+           
+             
+      <mat-form-field class="form1">
+          <input matInput [matDatepicker]="datepicker" placeholder="Choose a date" formControlName="date">
+          <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker  touchUi="true" #datepicker></mat-datepicker>
+        </mat-form-field> 
+     <div class="sub">
+     <button type="submit" mat-raised-button class="col-xs-4">Read</button> 
+     </div>
+    </form>
+  
+<div *ngIf="last; then error else devotional"></div>
+<ng-template #devotional>
+    <spinner backgroundColor="#002940" spinner="sk-chasing-dots"></spinner>
+    
+<div>
+  <!-- {{passkey0|json}}
+  {{passkey1|json}}
+  {{passkey2|json}} -->
+  <h1 class="subject">{{metadata.devotional?.title}}</h1></div>
+
+<br>
+<div class="image">
+    <img class="img-fluid" src="assets/img/{{metadata.devotional?.date}}.JPG">
+</div>
+
+
+
+<div  *ngIf="text"  class="verse">
+    <span [innerHTML]=text?.response.search.result.passages[0]?.text></span>
+   (<span [innerHTML]=text?.response.search.result.passages[0].display></span> 
+    <span [innerHTML]=text?.response.search.result.passages[0].version_abbreviation></span>
+   )
+</div>
+<br>
+<div (click)="showSelectedText()" >
+    <p *ngFor="let paragraph of metadata?.devotional?.eng_content; let i = index"><span class="num">{{i+1}} </span><span [innerHTML]=paragraph.paragraph></span>{{selectedText}}</p>
+  </div>
+<br>
+<div>
+<h5>{{metadata.devotional?.confession_head}}</h5>
+<span>{{metadata.devotional?.confession}}</span>
+</div>
+<br>
+<div>
+<h5>Further Study</h5>
+<div> 
+  <!-- first passage -->
+<mat-expansion-panel *ngIf="passkey0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+          <span [innerHTML]=passkey0?.response.search.result.passages[0].display></span>
+      </mat-panel-title>
+     
+    </mat-expansion-panel-header>
+    <div class="passages">
+    <span [innerHTML]=passkey0?.response.search.result.passages[0].text  class="further"></span>
+    (<span [innerHTML]=passkey0?.response.search.result.passages[0].version_abbreviation></span>)
+    </div>
+  </mat-expansion-panel>
+  
+<!-- second passage -->
+  <mat-expansion-panel *ngIf="passkey1">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <span [innerHTML]=passkey1?.response.search.result.passages[0].display></span>&nbsp;
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+      <div class="passages">
+      <span [innerHTML]=passkey1?.response.search.result.passages[0].text  class="further">
+        </span>(
+          <span [innerHTML]=passkey1?.response.search.result.passages[0].version_abbreviation></span>)
+      </div>
+    </mat-expansion-panel>
+    <!-- third passage -->
+    <mat-expansion-panel *ngIf="passkey2">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <span [innerHTML]=passkey2?.response.search.result.passages[0].display></span>&nbsp;
+          </mat-panel-title>
+         
+        </mat-expansion-panel-header>
+        <div class="passages">
+        <span [innerHTML]=passkey2?.response.search.result.passages[0].text  class="further">
+          </span>(
+            <span [innerHTML]=passkey2?.response.search.result.passages[0].version_abbreviation></span>)
+          </div>
+      </mat-expansion-panel>
+    <!-- fourth passage -->
+    <mat-expansion-panel *ngIf="passkey3">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <span [innerHTML]=passkey3?.response.search.result.passages[0].display></span>&nbsp;
+          </mat-panel-title>
+         
+        </mat-expansion-panel-header>
+        <div class="passages">
+        <span [innerHTML]=passkey3?.response.search.result.passages[0].text  class="further">
+          </span>(
+            <span [innerHTML]=passkey3?.response.search.result.passages[0].version_abbreviation></span>)
+            </div>
+      </mat-expansion-panel>
+    <!-- fifth passage -->
+    <mat-expansion-panel *ngIf="passkey4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <span [innerHTML]=passkey4?.response.search.result.passages[0].display></span>&nbsp;
+          </mat-panel-title>
+         
+        </mat-expansion-panel-header>
+        <div class="passages">
+        <span [innerHTML]=passkey4?.response.search.result.passages[0].text  class="further">
+          </span>(
+            <span [innerHTML]=passkey4?.response.search.result.passages[0].version_abbreviation></span>)
+        </div>
+      </mat-expansion-panel>
+</div>
+<br><br><br>
+
+
+</div>
+
+
+
+<div>
+  <h4>Bible Reading Plan</h4>
+    <div>
+        <mat-card> 
+      <h5>1 Year Plan</h5>
+      <p *ngFor="let one_year of  metadata?.devotional?.eng_one_year">
+
+          <a routerLink="/bible/{{one_year.new_passage_id}}"> 
+            {{ one_year.new_testament }}
+          </a>
+<br><br>
+          <a routerLink="/bible/{{one_year.old_passage_id}}"> 
+            {{ one_year.old_testament }}
+          </a>
+
+        
+      </p>
+      
+        
+   </mat-card> 
+    <div><br>
+        <mat-card> 
+      <h5>2 Year Plan</h5>
+      <p *ngFor="let two_year of metadata?.devotional?.eng_two_year">
+          
+                    <a routerLink="/bible/{{two_year.new_passage_id}}"> 
+                      {{ two_year.new_testament }}
+                    </a>
+          <br><br>
+                    <a routerLink="/bible/{{two_year.old_passage_id}}"> 
+                      {{ two_year.old_testament }}
+                    </a>
+          
+                  
+                </p>
+        </mat-card> 
+    </div>
+
+
+</div>
+
+<div class="comment-section">
+    <!-- <h4>Add Comments</h4>
+    <mat-form-field>
+        <textarea matInput placeholder="Textarea"></textarea>
+      </mat-form-field> -->
+    
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <i class="material-icons comment">comment</i> &nbsp;Comments
+          </mat-panel-title>
+         
+        </mat-expansion-panel-header>
+        <div>
+        
+        </div>
+      </mat-expansion-panel>
+</div>
+<div *ngIf="socials === true" class="buttons">
+    <button mat-mini-fab shareButton="facebook" [style.backgroundColor]="share.prop.facebook.color">
+        <fa-icon [icon]="share.prop.facebook.icon" size="lg"></fa-icon>
+      </button>
+      <button mat-mini-fab shareButton="twitter" [style.backgroundColor]="share.prop.twitter.color">
+        <fa-icon [icon]="share.prop.twitter.icon" size="lg"></fa-icon>
+      </button>
+      
+      <button mat-mini-fab shareButton="whatsapp" [style.backgroundColor]="share.prop.whatsapp.color">
+        <fa-icon [icon]="share.prop.whatsapp.icon" size="lg"></fa-icon>
+      </button>
+
+</div>
+
+  
+  
+<button mat-mini-fab class="share" (click)="toggleSocials()">
+    
+  <i class="material-icons">share</i>
+</button>
+</div>
+</ng-template>
+<ng-template #error>
+  <div class="invalid-content">
+    <p>
+      Sorry, the article you sought is not available,
+      please change the date in the calendar to read
+      current articles. Thank you.
+    </p>
+  </div>
+    
+</ng-template>
+</div></div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<div class="container auth">
+        
+    <div class="col-lg-4 offset-lg-4" >
+            <div class="sign-in-head">
+            <button mat-fab class="user-signin" style="box-shadow:unset"><mat-icon matListIcon>person_add
+                </mat-icon></button>
+                <p >Create Account</p>
+            </div>
+
+
+<form (ngSubmit)="onSignup(f)" #f="ngForm">
+  <div class="form-group">
+      
+      <input type="text" id="username" placeholder = "Full Name" name="username" ngModel class="form-control" required>
+  </div>
+   <div class="form-group">
+       
+    
+      <input type="email" id="email" placeholder = "Email" name="email" ngModel class="form-control" pattern="[^ @]*@[^ @]*" required>
+  </div>
+  
+  <div class="form-group">
+        
+        <ng-template #rt let-r="result" let-t="term">
+            {{ r.name}}
+        </ng-template>
+        <input id="typeahead-template" type="text" class="form-control"  [ngbTypeahead]="search" [resultTemplate]="rt"
+          [inputFormatter]="formatter"  placeholder = "Type to select Language" name= "language" ngModel  required/>
+  </div>
+   <div class="form-group">
+      
+      <input type="password" id="password" placeholder = "Password" name="password" ngModel class="form-control" minlength="8" required>
+  </div>
+
+  
+
+  <button type="submit"  [disabled]="f.invalid" class="btn btn-primary  btn-block">Sign Up</button>
+</form>
+<div class="password" style="text-align:center">
+       <p>By registering an account, you agree to our <a href="">terms</a></p>
+</div>
+<div class="no-account">
+        <span class="">Already Signed Up?</span> <span class="create-account"><a href="/signin">Sign In</a></span>
+    </div>
+</div>
+<span>
+    {{error}}
+    {{response}}
+</span>
+</div>

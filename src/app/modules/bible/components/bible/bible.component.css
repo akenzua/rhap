@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:700|Open+Sans');
+
+.devotional{
+    background: white;
+    padding-top: 15px;
+    margin: 0;
+    width: 100%;
+}
+h1,h2,h3,h4,h5,h4.s2{
+  font-family: 'Bitter', serif;
+}
+.selectBox{
+  margin-bottom: 15px;
+}
+.form1{
+    
+    padding-right: 20%;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    font-size: 17px;
+  }
+  .pull-right{
+    float: right;
+  }
+  .form2{
+    
+    padding-right: 5%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-right: 10px;
+    font-size: 17px;
+  }
+  .form3{
+    font-size: 17px;
+    padding-right: 5%;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+  }
+  .sub{
+    width: 5%;
+    
+    
+  }
+  #book-list{
+    height: 80vh;
+    overflow-y: auto;
+    background: white;
+    text-align: center;
+    margin: auto;
+    
+  }
+  #book-list::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #FFFFFF;
+  }
+  
+  #book-list::-webkit-scrollbar
+  {
+    width: 1px;
+    background-color: #FFFFFF;
+  }
+  
+  #book-list::-webkit-scrollbar-thumb
+  {
+    background-color: #7CC2D9;
+  }
+  #book-list mat-list-item{
+    display:block;
+    text-align: left;
+  }
+  .mat-list[dense] .mat-list-item, .mat-nav-list[dense] .mat-list-item, .mat-selection-list[dense] .mat-list-item{
+    font-size: 15px;
+  }
+  .mat-list .mat-list-item, .mat-nav-list .mat-list-item, .mat-selection-list .mat-list-item{
+    color:unset;
+  }
+  .chosen{
+    text-align: center;
+    background: #7CC2D9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    font-weight: 400;
+  }
+ .mat-fab{
+   margin-right:10px;
+   margin-bottom: 10px;
+   background-color:white;
+   color:black;
+   font-family:'Open Sans', sans-serif;
+   border: 1px solid #7CC2D9;
+ }
+ .mat-fab:not([class*=mat-elevation-z]){
+   box-shadow: unset;
+ }
+.example-form{
+  font-size:15px;
+}
+.selected {
+  background-color:#7CC2D9 !important;
+  color: white !important;
+}
+.right {
+  background-color: #e0e0e0;
+  position: fixed;
+  right: 30px;
+  opacity: 0.9;
+  bottom: 50px;
+  
+}
+.left{
+  background-color: #e0e0e0;
+  position: fixed;
+  left: 15px;
+  opacity: 0.9;
+  bottom: 50px;
+}
+.left a, .right a{
+  color: grey;
+}
+/* .q1 span{
+color:red;
+} */
+/* quotation */
+
+
+@media (max-width: 768px) {
+
+ 
+
+}
+

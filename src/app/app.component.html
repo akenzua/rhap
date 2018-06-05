@@ -1,0 +1,86 @@
+
+<div class="main-nav">
+<div class="container-fluid nav-header" [class.sticky]="isScroll" (scroll)="onWindowScroll()">
+ 
+  <span class="logo" [class.logos]="isLogos">
+    Rhapsody <br>of Realities
+  </span>
+  <span (click)="sidenav.toggle()" class="float-right">
+      <i class="material-icons md-48">menu</i>
+  </span>
+</div>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="over" class="example-sidenav" (click)="sidenav.toggle()" 
+    [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
+    [fixedBottomGap]="options.value.bottom">
+    <!-- {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} -->
+   
+      <div *ngIf ="message !== 'default message'; else untoken" class="avatar">
+        <img class="img-avatar rounded-circle" src="assets/img/{{message?.avatar}}">
+        <p> {{message?.email}}</p>
+      </div>
+      
+
+      
+        <ng-template #untoken class="user">
+            <img class="img-avatar rounded-circle" src="assets/img/user.jpg">
+            
+        </ng-template>
+      
+        <mat-nav-list dense>
+           
+            
+          <a mat-list-item  routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon matListIcon>home
+                </mat-icon>&nbsp;&nbsp;  Home  </a>
+                
+         <a mat-list-item  routerLink="/devotional/{{language}}/{{date}}"  routerLinkActive="active" [routerLinkActiveOptions]="true"><mat-icon matListIcon>book
+           </mat-icon>&nbsp;&nbsp;  Devotional </a>
+           
+         <a mat-list-item  routerLink="/bible/{{books}}" routerLinkActive="active"  [routerLinkActiveOptions]="true"><mat-icon matListIcon>import_contacts
+          </mat-icon>&nbsp;&nbsp;  
+          Bible </a>
+
+         <a mat-list-item routerLink="/tv" routerLinkActive="active" [routerLinkActiveOptions]="true"> 
+          <mat-icon matListIcon>tv
+            </mat-icon>&nbsp;&nbsp;  Rhapsody TV 
+        </a>
+         <a mat-list-item routerLink="/partnership" routerLinkActive="active" [routerLinkActiveOptions]="true"><mat-icon matListIcon>extension
+          </mat-icon>&nbsp;&nbsp;  Partnership </a>
+         <a mat-list-item routerLink="/downloads" routerLinkActive="active" [routerLinkActiveOptions]="true"><mat-icon matListIcon>file_download
+          </mat-icon>&nbsp;&nbsp;  Downloads </a>
+         <!-- <a mat-list-item routerLink="/resources" routerLinkActive="active" [routerLinkActiveOptions]="true"><mat-icon matListIcon>dns
+          </mat-icon>&nbsp;&nbsp;  Resources </a>
+        <a mat-list-item routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="true"><mat-icon matListIcon>contacts
+          </mat-icon>&nbsp;&nbsp;  Contact Us </a> -->
+         
+        </mat-nav-list>
+
+         
+        
+        <mat-nav-list class="power" dense>
+            <a  mat-list-item router *ngIf ="message === 'default message'" routerLink="/signin"><mat-icon matListIcon>
+              </mat-icon>&nbsp;&nbsp;  Log In</a>
+            <!-- <a  mat-list-item router *ngIf ="message !== 'default message'" href="/"><mat-icon matListIcon>account_circle
+                </mat-icon>&nbsp;&nbsp; Profile</a> -->
+            <a  mat-list-item router *ngIf ="message !== 'default message'" href="/" (click)='logOut()'><mat-icon matListIcon>
+                  </mat-icon>&nbsp;&nbsp;  Log Out</a>
+        </mat-nav-list> 
+        <!-- <div>
+            <p *ngIf="token === true" class="out"(click)='logOut()'><mat-icon matListIcon>account_box
+              </mat-icon>&nbsp;&nbsp;  Profile</p>
+            <a *ngIf ="message === null" href="/signin"><mat-icon matListIcon>contacts
+          </mat-icon>&nbsp;&nbsp;  Log In</a>
+          <p *ngIf ='message' class="out"(click)='logOut()'>Log Out</p>
+        </div> -->
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+        <router-outlet>
+            
+          </router-outlet>
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>
+
+  <spinner backgroundColor="#002940" spinner="sk-chasing-dots"></spinner>
+</div>

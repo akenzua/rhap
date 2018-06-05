@@ -1,0 +1,206 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Bitter:700|Open+Sans');
+@font-face { font-family: 'Melville Regular'; src: url("http://daysman.co/assets/fonts/Melville Regular.ttf") format('truetype'); }
+
+
+body{
+  background: #fff;
+}
+.mat-datepicker-toggle {
+  background: url("/assets/img/calendar.png") no-repeat !important;
+  
+}
+.mat-datepicker-toggle .mat-icon {
+  display: none;
+}
+.nav-header{
+    padding-left:30px;
+    padding-right: 30px;
+    padding-top: 8px;
+    /* padding-bottom: 10px; */
+    padding-bottom: 8px;
+    background: #002940;
+    color: #dff5fb;
+    /* border-bottom: 1px solid #97AEBF; */
+}
+
+.logo{
+    font-family: 'Melville Regular';
+    display: inline-block;
+    font-size: 25px;
+    
+}
+.logos{
+  display: none;
+}
+.sticky{
+  position: fixed;
+  top: 0px;
+  right:0px;
+  width: inherit;
+  z-index: 2;
+  
+}
+.verse p sup{
+    display: none;
+  }
+
+  .verse span p, .verse span, .passages span p{
+    
+    display: inline;
+  }
+.md-48{
+    font-size: 30px;
+}
+mat-sidenav {
+    width: 80vw;
+  }
+.md-18{
+ font-size: 20px;
+ margin-left: -20px;
+}
+p.p{
+    font-family:'Open Sans', sans-serif;
+    margin-bottom: 10px;
+  }
+  h4.s2, h3.s, h3.s1{
+    font-family: 'Bitter', serif;
+    font-size: 20px;
+  }
+  sup{
+    top: 0;
+    font-family: 'Bitter', serif;
+    color: #7CC2D9;
+    font-size: 15px;
+    margin-right: 10px;
+  }
+  #copyright p{
+    color: grey;
+    
+    
+    font-style: italic;
+    font-size: 12px;
+  }
+  #copy{
+      margin-top:70px;
+      padding-bottom: 30px;
+      padding-top: 20px;
+  }
+  
+ 
+
+    .mat-drawer{
+    background: #002940;
+    opacity:0.85;
+    
+    
+  } 
+  
+  .mat-nav-list .mat-list-item-content{
+    color:#bfebf8;
+    /* font-size: 14px; */
+    font-family:'Open Sans', sans-serif;
+    margin-left: 15px;
+  }
+ 
+  .img-avatar{
+    margin: 20px auto 10px;;
+    display: block;
+  }
+  .avatar p, .user p{
+    /* border-bottom:1px solid #bfebf8; */
+    
+    margin-bottom: 5px;
+    color:#bfebf8;
+    text-align: center;
+  }
+.active{
+  border-left:10px solid #bfebf8;
+  color: #002940;
+}
+p.p span{
+  margin-bottom: 15px;
+  display: block;
+  line-height: 1.8;
+}
+.add, .nd, .it{font-style: italic;
+  display: inline!Important;}/* not in original manuscript i guess*/
+ 
+  /* quotation */
+  .q1 span{
+    display: block;
+    font-weight: 900;
+    text-align: right;
+}
+  
+
+.m span{
+
+}/* mat 2:7 */
+
+.dropdown-item.active, .dropdown-item:active{
+  background: #fff;
+  color: black;
+}
+.active {
+  border-left: unset;
+  color: #002940;
+}
+.power{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 30px;
+}
+.pull-right{
+  float: right;
+}
+.out{
+  color: #bfebf8;
+  font-size: 18px;
+  padding: 5px;
+  padding-left: 30px;
+  text-align: right;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon { 
+  display: none;
+}
+.carousel-indicators .active{
+  background: #1A3A5A;
+}
+.carousel-caption p{
+ text-align: right;
+  width: 100%;
+  color:#1A3A5A;
+  font-size: 40px;
+  margin-top:30%;
+}
+.carousel-indicators li{
+  background-color: #D6981F;
+}
+.slider img{
+  display: block;
+}
+/* .container, .container-fluid{
+  background: #fff;
+} */
+.home{
+  background: #fff;
+}
+.programmes td{
+  min-width: 50px;
+  
+}
+.highlighted{
+  font-style: italic;
+}
+    
+
+@media (min-width: 768px) { 
+  mat-sidenav {
+  width: 400px;
+}
+ }

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:700|Open+Sans');
+.banner{
+    background-image: url(../../assets/img/banner.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 90vh;
+   
+    margin-top: 0;
+}
+.cap{
+    color: #fff;
+    margin-top: 10em;
+    font-family: 'Bitter', serif;
+    font-size: 30px;
+    text-align: right;
+    opacity: .95;
+}
+nav-header{
+    background: #1A3A5A;
+    color: #fff;
+    border-bottom: 1px solid #97AEBF;
+}
+
+.second, .third{
+min-height: 80vh;
+}
+.second{
+    background:#f1f1f1;
+}
+.slider{
+    background:  #fff;
+}
+.carousel-caption{
+    position: unset;
+}
+.tv{
+    background:#D6981F;
+    
+    opacity: 70%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+table{
+    border-collapse: unset;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.table thead th, table, thead, th, td{
+    border:unset;
+}
+thead{
+    
+    color: #eacb8f;
+}
+td{
+    background: #eed5a5;
+    border-collapse: unset;
+    width:200px;
+    border-radius: 7px;
+    font-family: 'Bitter', serif;
+    color: #daa235;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.station{
+    background: #D6981F;
+    color:#eed5a5;
+    vertical-align: middle;
+    text-align: right;
+}
+#usa{
+    color:#191919;
+    background: #D6981F;
+    font-size: 25px;
+    vertical-align: middle;
+    text-align: right;
+}
+footer{
+    
+}
+.main{
+    padding-top: 10px;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    padding-bottom: 10px;
+    
+}
+.explain{
+    background:#002C57 ;  
+    /* background:#000000;  */
+    padding-bottom: 5px; 
+    padding-top: 5px;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    font-size: 12px;
+    font-style: italic;
+    color: #97AEBF ;
+    /* color: #666666 ; */
+}
+.head{
+    color:#eed5a5;
+    font-size: 40px;
+    font-weight: 900;
+    font-family: 'Bitter', serif;
+}
+.prog{
+    color:#eed5a5;
+    font-weight: 900;
+    font-family: 'Bitter', serif;
+}
+@media (max-width: 576px) { 
+   .cap{
+       font-size: 20px;
+   }
+   .carousel-caption p{
+    margin-top: 10%;
+    padding-right: 40px;
+   }
+  }
